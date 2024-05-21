@@ -1,0 +1,264 @@
+/*-------------- Google fonts ---------------*/
+
+@import url("common.css");
+
+
+/*----------- Header styling start ------------*/
+.header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/furniture-hero-bg.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .company {
+    color: var(--white-color);
+    font-size: 1rem;
+    font-family: var(--para-font);
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.logo img {
+    width: 50px;
+    /* padding: 10px; */
+    vertical-align: middle;
+    /* height:60px; */
+    margin-right: 0.5rem;
+}
+
+.logo .lang-container {
+    color: var(--white-color);
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: var(--para-font);
+    font-weight: 600;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.logo .lang-container a {
+    color: var(--white-color);
+}
+
+.logo .lang-container a:link {
+    text-decoration: none;
+}
+
+.logo .lang-container a:visited {
+    text-decoration: none;
+}
+
+.logo .lang-container a:hover {
+    text-decoration: none;
+}
+
+.logo .lang-container a:active {
+    text-decoration: none;
+}
+
+.hero-content {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-content .main-heading {
+    color: var(--white-color);
+    font-size: 7vw;
+    font-weight: 300;
+    line-height: 1;
+    font-family: var(--heading-font);
+    /* margin-bottom: 2.8rem; */
+}
+
+.hero-content .btn {
+    margin: 2em;
+}
+
+/*----------- Header styling ends ------------*/
+
+/* ----------------------------------------------------------------------------
+ * Presentation
+ * ---------------------------------------------------------------------------*/
+
+.presentation .container .row {
+    /* Vertical align text with image */
+    align-items: center;
+    gap: 6rem;
+}
+
+.presentation-img {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * Products
+ * ---------------------------------------------------------------------------*/
+.products {
+    background-color: var(--body-color-2);
+}
+
+#product-list {
+    padding: 0;
+    margin: 0;
+    margin-top: -8rem;
+}
+
+#product-list .row {
+    margin-top: 2rem;
+}
+
+/* ----------------------------------------------------------------------------
+ * Product
+ * ---------------------------------------------------------------------------*/
+.product {
+    transition: .5s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product .product-img,
+.product .name {
+    cursor: pointer;
+    font-size: var(--product-name-font-size);
+    font-family: var(--para-font);
+    font-weight: 600;
+}
+
+.product .product-img {
+    width: 100%;
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Portfolios
+ * ---------------------------------------------------------------------------*/
+.portfolios .name {
+    font-size: var(--portfolio-name-font-size);
+    font-weight: 500;
+    font-family: var(--para-font);
+}
+
+.portfolio-img {
+    width: 100%;
+}
+
+/*------------ Portfolio section styling end ----------*/
+
+/*------------ Footer section styling start ----------*/
+.footer {
+    height: 70vh;
+    background-position: center center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/footer-bg-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: top center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .container {
+    padding: 5rem;
+    width: 100%;
+}
+
+.footer .container .heading {
+    color: #fff;
+}
+
+.footer .container .row {
+    margin-top: 3rem;
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    gap: 30px;
+
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* .footer .container .row .col
+{
+    width: 100%;
+} */
+
+.footer-heading {
+    color: #fff;
+    font-size: var(--footer-heading-font-size);
+    font-family: var(--heading-font);
+}
+
+.white {
+    color: #ffffff;
+    font-size: 2.5vw;
+}
+
+
+@media only screen and (min-width: 768px) {
+    /* .footer-heading {
+        font-size: 1.2vw;
+    } */
+
+    .white {
+        font-size: 1.5vw;
+    }
+}
+
+
+
+/*------------ Footer section styling end ----------*/
+
+/*----------------------------------------------------------*/
+/*-------------------- Desktop size styling ----------------*/
+/*----------------------------------------------------------*/
+/* @media screen and (min-width: 768px)
+{
+}
+
+
+
+
+/*------ Footer styling start ---------- */
+/* .footer
+{
+    height: 100vh;
+    background-position: center center;
+}
+
+.footer .container
+{
+    padding: 5rem;
+    width: 100%;
+}
+
+.footer .container .row
+{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-heading
+{
+    font-size: 1.2vw;
+}
+
+.white
+{
+    font-size: 1.5vw;
+} */
+/*------ Footer styling end ---------- */
