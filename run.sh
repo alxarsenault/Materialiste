@@ -1,1 +1,1 @@
-http-server -p 3000 public -o 
+http-server -p 3000 -o .
