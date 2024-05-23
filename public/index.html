@@ -1,15 +1,17 @@
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<html lang="mul">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Matérialiste est une entreprise montréalaise de design et de fabrication de mobilier multifonction">
+  <meta name="keywords" content="Furniture">
+
   <title>Matérialiste</title>
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link rel="stylesheet" href="css/app.css">
-
 </head>
 
 <body>
@@ -32,11 +34,11 @@
   <section class="header">
     <div class="container">
       <div class="logo">
-        <img src="img/logo.png" alt="logo">
-        <span class="company">Matérialiste</span>
+        <img src="img/logo.png" alt="logo" onclick="gotoHome()">
+        <span class="company" onclick="gotoHome()">Matérialiste</span>
         <span class="lang-container">
-          <a href="#" onclick="setLanguage('fr')">FR</a> |
-          <a href="#" onclick="setLanguage('en')">EN</a>
+          <a id="fr-lang-button" href="#" onclick="setLanguage('fr')">FR</a> |
+          <a id="en-lang-button" href="#" onclick="setLanguage('en')">EN</a>
         </span>
       </div>
 
@@ -54,10 +56,17 @@
     </div>
   </section>
 
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
+  <div id="modal-dialog" class="modal">
+    <span id="modal-close" class="modal-navigate-button">&times;</span>
+
+    <div class="modal-container">
+      <img id="modal-content" src="#" alt="">
+      <!-- <div id="caption"></div> -->
+    </div>
+    <span id="previous-image-button" class="modal-navigate-button">&lt;</span>
+    <span id="next-image-button" class="modal-navigate-button">&gt;</span>
+    <!-- <div id="previous-image-button"> <span>&lt;</span></div> -->
+    <!-- <div id="next-image-button"> <span>&gt;</span></div> -->
   </div>
 
   <!-- Presentation starts -->
@@ -87,6 +96,7 @@
             pièces uniques et durables.
           </p>
         </div>
+
         <div class="col">
           <img src="img/toy-01.jpg" alt="toy" class="presentation-img">
         </div>
@@ -101,17 +111,22 @@
         <div class="col">
 
           <!-- Products Title -->
-          <h2 class="heading lang-en">
-            Thoughtful & <br> Functional
-          </h2>
-          <h2 class="heading lang-fr">
-            Réfléchi &<br>Fonctionnel
-          </h2>
+          <div class="title-section">
+            <h2 class="heading lang-en">
+              Thoughtful & <br> Functional
+            </h2>
+            <h2 class="heading lang-fr">
+              Réfléchi &<br>Fonctionnel
+            </h2>
 
-          <button class="btn lang-en" onclick="toggleProducts()">Products <p class="product-list-arrow">&nbsp;↓</p>
-          </button>
-          <button class="btn lang-fr" onclick="toggleProducts()">Produits <p class="product-list-arrow">&nbsp;↓</p>
-          </button>
+            <button class="btn lang-en" onclick="toggleProducts()">Products <span
+                class="product-list-arrow">&nbsp;↓</span>
+            </button>
+            <button class="btn lang-fr" onclick="toggleProducts()">Produits <span
+                class="product-list-arrow">&nbsp;↓</span>
+            </button>
+          </div>
+
         </div>
 
         <div class="col">
@@ -143,15 +158,17 @@
           </div>
         </div>
       </div>
+      <!-- <div id="product-list" class="row">
+        <div id="product-list-content" class="container">
+        </div>
+      </div> -->
     </div>
   </section>
 
-
-  <section id="product-list" class="products">
+  <div id="product-list" class="products">
     <div id="product-list-content" class="container">
     </div>
-  </section>
-
+  </div>
 
   <!-- Portfolio section start -->
   <section class="portfolios">
@@ -206,7 +223,7 @@
       <h2 class="heading lang-en">Inquire about a <br>furniture</h2>
       <h2 class="heading lang-fr">Renseignez-vous <br>sur un meuble</h2>
 
-      <div class="row">
+      <div id="footer-mailing-address-last" class="row">
         <div class="col">
           <h4 class="footer-heading lang-en">
             Mailing Address
@@ -215,7 +232,22 @@
             Adresse Postale
           </h4>
 
-          <p class="para-line white">
+          <p class="para-line footer-text">
+            123 de Lorimier, Montréal, Québec, Canada
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="footer-mailing-address-first" class="col">
+          <h4 class="footer-heading lang-en">
+            Mailing Address
+          </h4>
+          <h4 class="footer-heading lang-fr">
+            Adresse Postale
+          </h4>
+
+          <p class="para-line footer-text">
             123 de Lorimier, Montréal, Québec, Canada
           </p>
         </div>
@@ -227,8 +259,8 @@
             Adresse Email
           </h4>
 
-          <p class="para-line white">
-            <a class="white" href="mailto: materialistemobilier@gmail.com"> materialistemobilier@gmail.com</a>
+          <p class="para-line footer-text">
+            <a class="footer-text" href="mailto:materialistemobilier@gmail.com"> materialistemobilier@gmail.com</a>
           </p>
         </div>
         <div class="col">
@@ -238,11 +270,37 @@
           <h4 class="footer-heading lang-fr">
             Téléphone
           </h4>
-          <p class="para-line white">
+          <p class="para-line footer-text">
             (514) 717-1581
           </p>
         </div>
+        <!-- <div class="col footer-mailing-address-last">
+          <h4 class="footer-heading lang-en">
+            Mailing Address
+          </h4>
+          <h4 class="footer-heading lang-fr">
+            Adresse Postale
+          </h4>
+
+          <p class="para-line footer-text">
+            123 de Lorimier, Montréal, Québec, Canada
+          </p>
+        </div> -->
       </div>
+
+
+
+      <!-- <div class="row"> -->
+      <!-- <div class="col"> -->
+
+      <!-- <a class="footer-heading" href="about.html">About</a> -->
+
+      <!-- <img class="img-responsive" src="img/logo.png" width="30" height="30" alt=""> -->
+      <!-- <img class="img-responsive" src="img/footer-text-facebook-512.png" width="20" height="20" alt=""> -->
+      <!-- </div> -->
+
+      <!-- </div> -->
+
     </div>
   </section>
 
@@ -251,12 +309,16 @@
   <!-- <script src="js/vendor/foundation.js"></script> -->
   <!-- <script src="js/app.js"></script> -->
 
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> -->
 
-  <script src="js/products.js"></script>
+  <script src="js/handlebars.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/lang.js"></script>
+
   <script src="js/app.js"></script>
 </body>
 

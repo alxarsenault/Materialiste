@@ -1,15 +1,31 @@
-/*-------------- Google fonts ---------------*/
-
 @import url("common.css");
 
+/* ----------------------------------------------------------------------------
+ * Header
+ * ---------------------------------------------------------------------------*/
 
-/*----------- Header styling start ------------*/
 .header {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/furniture-hero-bg.jpg);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+}
+
+.header .container {
+    padding: var(--header-container-padding);
+}
+
+.about-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/172265636_169620748405959_5553376907795596059_n.jpg);
+}
+
+.wood-header {
+    height: 30vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/172265636_169620748405959_5553376907795596059_n.jpg);
+    background-size: cover;
+    background-position: center top;
+        background-repeat: no-repeat;
 }
 
 .logo {
@@ -19,10 +35,11 @@
 
 .logo .company {
     color: var(--white-color);
-    font-size: 1rem;
+    font-size: var(--company-logo-font-size);
     font-family: var(--para-font);
     font-weight: 600;
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .logo img {
@@ -31,6 +48,7 @@
     vertical-align: middle;
     /* height:60px; */
     margin-right: 0.5rem;
+    cursor: pointer;
 }
 
 .logo .lang-container {
@@ -63,6 +81,10 @@
     text-decoration: none;
 }
 
+.logo .lang-container .selected-lang {
+    color: #dd9d4c;
+}
+
 .hero-content {
     width: 100%;
     height: 65vh;
@@ -73,24 +95,29 @@
 
 .hero-content .main-heading {
     color: var(--white-color);
-    font-size: 7vw;
+    font-size: var(--hero-title-font-size);
     font-weight: 300;
     line-height: 1;
     font-family: var(--heading-font);
     /* margin-bottom: 2.8rem; */
 }
 
-.hero-content .btn {
-    margin: 2em;
-}
+/* top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px */
 
-/*----------- Header styling ends ------------*/
+.hero-content .btn {
+    /* margin: 2em; */
+    margin: 2em 0 0 0em;
+}
 
 /* ----------------------------------------------------------------------------
  * Presentation
  * ---------------------------------------------------------------------------*/
 
 .presentation .container .row {
+    flex-direction: var(--presentation-col-direction);
     /* Vertical align text with image */
     align-items: center;
     gap: 6rem;
@@ -103,9 +130,22 @@
 /* ----------------------------------------------------------------------------
  * Products
  * ---------------------------------------------------------------------------*/
+
 .products {
     background-color: var(--body-color-2);
 }
+
+.products .container .row {
+    flex-direction: var(--products-col-direction);
+}
+
+/* .products .title-section {
+    display:flex;
+} */
+
+/* .products .title-section .btn {
+    height: max-content;
+} */
 
 #product-list {
     padding: 0;
@@ -120,12 +160,17 @@
 /* ----------------------------------------------------------------------------
  * Product
  * ---------------------------------------------------------------------------*/
+
 .product {
     transition: .5s;
 }
 
 .product:hover {
     transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
 }
 
 .product .product-img,
@@ -140,10 +185,14 @@
     width: 100%;
 }
 
-
 /* ----------------------------------------------------------------------------
  * Portfolios
  * ---------------------------------------------------------------------------*/
+
+.portfolios {
+    background-color: var(--body-color-3);
+}
+
 .portfolios .name {
     font-size: var(--portfolio-name-font-size);
     font-weight: 500;
@@ -154,11 +203,14 @@
     width: 100%;
 }
 
-/*------------ Portfolio section styling end ----------*/
+/* ----------------------------------------------------------------------------
+ * Footer
+ * ---------------------------------------------------------------------------*/
 
-/*------------ Footer section styling start ----------*/
 .footer {
-    height: 70vh;
+    /* height: 70vh; */
+    /* height: 30rem; */
+    height: var(--footer-height);
     background-position: center center;
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/footer-bg-1.jpg);
@@ -176,89 +228,50 @@
 }
 
 .footer .container .heading {
-    color: #fff;
+    color: var(--white-color);
+    /* margin-bottom: 3rem; */
 }
 
 .footer .container .row {
     margin-top: 3rem;
-    display: flex;
-    /* flex-direction: row; */
-    /* align-items: center; */
-    gap: 30px;
-
-    /* flex-direction: row; */
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: var(--footer-col-direction);
 }
 
-/* .footer .container .row .col
-{
-    width: 100%;
-} */
-
 .footer-heading {
-    color: #fff;
+    color: var(--white-color);
     font-size: var(--footer-heading-font-size);
     font-family: var(--heading-font);
 }
 
-.white {
-    color: #ffffff;
-    font-size: 2.5vw;
+.footer-text {
+    color: var(--white-color);
+    font-size: var(--footer-font-size);
 }
 
-
-@media only screen and (min-width: 768px) {
-    /* .footer-heading {
-        font-size: 1.2vw;
-    } */
-
-    .white {
-        font-size: 1.5vw;
-    }
+/* On phone and desktop */
+/* 1. mailing address */
+/* 2. email */
+/* 3. phone */
+#footer-mailing-address-first {
+    visibility: var(--footer-mailing-address-first-visibility);
+    display: var(--footer-mailing-address-first-display);
 }
 
-
-
-/*------------ Footer section styling end ----------*/
-
-/*----------------------------------------------------------*/
-/*-------------------- Desktop size styling ----------------*/
-/*----------------------------------------------------------*/
-/* @media screen and (min-width: 768px)
-{
+/* On tablet */
+/* 1. email */
+/* 2. phone */
+/* 3. mailing address */
+#footer-mailing-address-last {
+    visibility: var(--footer-mailing-address-last-visibility);
+    display: var(--footer-mailing-address-last-display);
 }
 
 
 
-
-/*------ Footer styling start ---------- */
-/* .footer
-{
-    height: 100vh;
-    background-position: center center;
+.wood-list .container .row {
+    flex-direction: var(--products-col-direction);
 }
 
-.footer .container
-{
-    padding: 5rem;
+.wood-list .wood-img {
     width: 100%;
 }
-
-.footer .container .row
-{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.footer-heading
-{
-    font-size: 1.2vw;
-}
-
-.white
-{
-    font-size: 1.5vw;
-} */
-/*------ Footer styling end ---------- */

@@ -1,0 +1,356 @@
+/*-------------- Google fonts ---------------*/
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=PT+Serif:wght@400;700&display=swap'); */
+
+@import url('font.css');
+
+:root {
+    /* Fonts */
+    --heading-font: 'PT Serif', serif;
+    --para-font: 'Outfit', sans-serif;
+
+    /* Colors */
+    --primary-color: #dd9d4c;
+    --secondary-color: #2d3436;
+    --body-color: #f6f1ed;
+    --body-color-2: #E8E4E2;
+    --body-color-3: #D9D4D0;
+    --white-color: #ffffff;
+
+    /* Device specifics */
+    --param-line-font-size: 4.6vw;
+    --heading-font-size: 6vw;
+    --col-direction: column;
+    --container-padding: 3rem;
+
+    /* Hero */
+    --company-logo-font-size: 1rem;
+    --header-container-padding: 2rem;
+    --hero-title-font-size: 10vw;
+
+    /* Presentation */
+    --presentation-col-direction: column;
+
+    /* Products */
+    --products-col-direction: column;
+
+    /* Product */
+    --product-name-font-size: 3.4vw;
+
+    /* Portfolio */
+    --portfolio-name-font-size: 3.6vw;
+
+    /* Footer */
+    --footer-height: 30rem;
+    --footer-col-direction: column;
+    --footer-heading-font-size: 3.2vw;
+    --footer-font-size: 2.5vw;
+    --footer-mailing-address-first-visibility: visible;
+    --footer-mailing-address-first-display: flexbox;
+    --footer-mailing-address-last-visibility: hidden;
+    --footer-mailing-address-last-display: none;
+
+
+
+
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        /* Device specifics */
+        --param-line-font-size: 2.6vw;
+        --heading-font-size: 3.5vw;
+        --col-direction: row;
+        --container-padding: 4rem;
+
+        /* Hero */
+        --header-container-padding: 6rem;
+        --company-logo-font-size: 1.5rem;
+        --hero-title-font-size: 7vw;
+
+        /* Presentation */
+        --presentation-col-direction: row;
+
+        /* Products */
+        --products-col-direction: column;
+
+        /* Product */
+        --product-name-font-size: 2.4vw;
+
+        /* Portfolio */
+        --portfolio-name-font-size: 2.6vw;
+
+        /* Footer */
+        --footer-height: 30rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 2.3vw;
+        --footer-font-size: 2.5vw;
+        --footer-mailing-address-first-visibility: hidden;
+        --footer-mailing-address-first-display: none;
+        --footer-mailing-address-last-visibility: visible;
+        --footer-mailing-address-last-display: flex;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    :root {
+        /* Device specifics */
+        --param-line-font-size: 1.6vw;
+        --heading-font-size: 3.5vw;
+        --col-direction: row;
+        --container-padding: 6rem;
+
+        /* Hero */
+        --header-container-padding: 6rem;
+        --company-logo-font-size: 1.5rem;
+        --hero-title-font-size: 7vw;
+
+        /* Presentation */
+        --presentation-col-direction: row;
+
+        /* Products */
+        --products-col-direction: row;
+
+        /* Product */
+        --product-name-font-size: 1.4vw;
+
+        /* Portfolio */
+        --portfolio-name-font-size: 1.6vw;
+
+        /* Footer */
+        --footer-height: 40rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 1.3vw;
+        --footer-font-size: 1.5vw;
+        --footer-mailing-address-first-visibility: visible;
+        --footer-mailing-address-first-display: flexbox;
+        --footer-mailing-address-last-visibility: hidden;
+        --footer-mailing-address-last-display: none;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* .visible {
+    visibility: visible;
+    display: flexbox;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+} */
+
+/* .white {
+    color: var(--white-color);
+} */
+
+.heading {
+    font-size: var(--heading-font-size);
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+}
+
+.para-line {
+    color: var(--secondary-color);
+    font-size: var(--param-line-font-size);
+    font-weight: 300;
+    font-family: var(--para-font);
+}
+
+.btn {
+    color: #ffffff;
+    background-color: var(--primary-color);
+    font-family: var(--para-font);
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    padding: .7rem 3.2rem;
+    width: max-content;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translate(10px);
+}
+
+.container {
+    padding: var(--container-padding);
+}
+
+.container .row {
+    display: flex;
+    flex-direction: var(--col-direction);
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.container .row .col {
+    width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Modal */
+/* -------------------------------------------------------------------------- */
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* display: flex; */
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    /* overflow: auto; */
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+
+    /* justify-content: center; */
+    /* text-align: center; */
+
+    padding: 2rem;
+}
+
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    /* padding: 2rem; */
+}
+
+/* Modal Content (image) */
+/* .modal-content  */
+
+#modal-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    animation-name: zoom;
+    -webkit-animation-name: zoom;
+
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+}
+
+/* Caption of Modal Image */
+/* #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+} */
+
+/* Add Animation */
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.modal-navigate-button {
+    cursor: pointer;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    position: absolute;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.modal-navigate-button:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Close Button */
+#modal-close {
+    top: 15px;
+    right: 35px;
+}
+
+#previous-image-button {
+    bottom: 15%;
+    left: 30%;
+}
+
+#next-image-button {
+    bottom: 15%;
+    right: 30%;
+}
+
+@media only screen and (min-width: 768px) {
+    #previous-image-button {
+        bottom: 10%;
+        left: 40%;
+    }
+
+    #next-image-button {
+        bottom: 10%;
+        right: 40%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #previous-image-button {
+        top: 50%;
+        left: 10%;
+    }
+
+    #next-image-button {
+        top: 50%;
+        right: 10%;
+    }
+}
