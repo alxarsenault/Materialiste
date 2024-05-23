@@ -1,0 +1,57 @@
+/* ----------------------------------------------------------------------------
+ * Footer
+ * ---------------------------------------------------------------------------*/
+
+.footer {
+    height: var(--footer-height);
+    background-position: center center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/footer-bg-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .container {
+    padding: 5rem;
+    width: 100%;
+}
+
+.footer .container .heading {
+    color: var(--white-color);
+}
+
+.footer .container .row {
+    margin-top: 3rem;
+    flex-direction: var(--footer-col-direction);
+}
+
+.footer-heading {
+    color: var(--white-color);
+    font-size: var(--footer-heading-font-size);
+    font-family: var(--heading-font);
+}
+
+.footer-text {
+    color: var(--white-color);
+    font-size: var(--footer-font-size);
+}
+
+/* On phone and desktop */
+/* 1. mailing address */
+/* 2. email */
+/* 3. phone */
+#footer-mailing-address-first {
+    visibility: var(--footer-mailing-address-first-visibility);
+    display: var(--footer-mailing-address-first-display);
+}
+
+/* On tablet */
+/* 1. email */
+/* 2. phone */
+/* 3. mailing address */
+#footer-mailing-address-last {
+    visibility: var(--footer-mailing-address-last-visibility);
+    display: var(--footer-mailing-address-last-display);
+}

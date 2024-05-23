@@ -1,0 +1,299 @@
+@import url("common.css");
+@import url("footer.css");
+
+:root {
+    /* Hero */
+    --company-logo-font-size: 1rem;
+    --header-container-padding: 2rem;
+    --hero-title-font-size: 10vw;
+
+    /* Presentation */
+    --presentation-col-direction: column;
+
+    /* Products */
+    --products-col-direction: column;
+
+    /* Product */
+    --product-name-font-size: 3.4vw;
+
+    /* Portfolio */
+    --portfolio-name-font-size: 3.6vw;
+
+    /* Footer */
+    --footer-height: 30rem;
+    --footer-col-direction: column;
+    --footer-heading-font-size: 3.2vw;
+    --footer-font-size: 2.5vw;
+    --footer-mailing-address-first-visibility: visible;
+    --footer-mailing-address-first-display: flexbox;
+    --footer-mailing-address-last-visibility: hidden;
+    --footer-mailing-address-last-display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+
+        /* Hero */
+        --company-logo-font-size: 1.5rem;
+        --header-container-padding: 6rem;
+        --hero-title-font-size: 7vw;
+
+        /* Presentation */
+        --presentation-col-direction: row;
+
+        /* Products */
+        --products-col-direction: column;
+
+        /* Product */
+        --product-name-font-size: 2.4vw;
+
+        /* Portfolio */
+        --portfolio-name-font-size: 2.6vw;
+
+        /* Footer */
+        --footer-height: 30rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 2.3vw;
+        --footer-font-size: 2.5vw;
+        --footer-mailing-address-first-visibility: hidden;
+        --footer-mailing-address-first-display: none;
+        --footer-mailing-address-last-visibility: visible;
+        --footer-mailing-address-last-display: flex;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    :root {
+        /* Hero */
+        --company-logo-font-size: 1.5rem;
+        --header-container-padding: 6rem;
+        --hero-title-font-size: 7vw;
+
+        /* Presentation */
+        --presentation-col-direction: row;
+
+        /* Products */
+        --products-col-direction: row;
+
+        /* Product */
+        --product-name-font-size: 1.4vw;
+
+        /* Portfolio */
+        --portfolio-name-font-size: 1.6vw;
+
+        /* Footer */
+        --footer-height: 40rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 1.3vw;
+        --footer-font-size: 1.5vw;
+        --footer-mailing-address-first-visibility: visible;
+        --footer-mailing-address-first-display: flexbox;
+        --footer-mailing-address-last-visibility: hidden;
+        --footer-mailing-address-last-display: none;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+ * Header
+ * ---------------------------------------------------------------------------*/
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/furniture-hero-bg.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.header .container {
+    padding: var(--header-container-padding);
+}
+
+.wood-header {
+    height: 30vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/172265636_169620748405959_5553376907795596059_n.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .company {
+    color: var(--white-color);
+    font-size: var(--company-logo-font-size);
+    font-family: var(--para-font);
+    font-weight: 600;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+    /* padding: 10px; */
+    vertical-align: middle;
+    /* height:60px; */
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.logo .lang-container {
+    color: var(--white-color);
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: var(--para-font);
+    font-weight: 600;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.logo .lang-container a {
+    color: var(--white-color);
+}
+
+.logo .lang-container a:link {
+    text-decoration: none;
+}
+
+.logo .lang-container a:visited {
+    text-decoration: none;
+}
+
+.logo .lang-container a:hover {
+    text-decoration: none;
+}
+
+.logo .lang-container a:active {
+    text-decoration: none;
+}
+
+.logo .lang-container .selected-lang {
+    color: #dd9d4c;
+}
+
+.hero-content {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-content .main-heading {
+    color: var(--white-color);
+    font-size: var(--hero-title-font-size);
+    font-weight: 300;
+    line-height: 1;
+    font-family: var(--heading-font);
+    /* margin-bottom: 2.8rem; */
+}
+
+/* top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px */
+
+.hero-content .btn {
+    /* margin: 2em; */
+    margin: 2em 0 0 0em;
+}
+
+/* ----------------------------------------------------------------------------
+ * Presentation
+ * ---------------------------------------------------------------------------*/
+
+.presentation .container .row {
+    flex-direction: var(--presentation-col-direction);
+    /* Vertical align text with image */
+    align-items: center;
+    gap: 6rem;
+}
+
+.presentation-img {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * Products
+ * ---------------------------------------------------------------------------*/
+
+.products {
+    background-color: var(--body-color-2);
+}
+
+.products .container .row {
+    flex-direction: var(--products-col-direction);
+}
+
+.products .container .row:not(#products-first-row) {
+    margin-bottom: 3rem;
+}
+
+#product-list-content .row:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* ----------------------------------------------------------------------------
+ * Product
+ * ---------------------------------------------------------------------------*/
+
+.product {
+    transition: .5s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+
+.product .product-img,
+.product .name {
+    cursor: pointer;
+    font-size: var(--product-name-font-size);
+    font-family: var(--para-font);
+    font-weight: 600;
+}
+
+.product .product-img {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * Portfolios
+ * ---------------------------------------------------------------------------*/
+
+.portfolios {
+    background-color: var(--body-color-3);
+}
+
+.portfolios .name {
+    font-size: var(--portfolio-name-font-size);
+    font-weight: 500;
+    font-family: var(--para-font);
+}
+
+.portfolio-img {
+    width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * Footer
+ * ---------------------------------------------------------------------------*/
+
+
+
+
+/*  */
+.wood-list .container .row {
+    flex-direction: var(--products-col-direction);
+}
+
+.wood-list .wood-img {
+    width: 100%;
+}

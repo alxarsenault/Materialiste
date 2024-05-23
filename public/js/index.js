@@ -2,7 +2,22 @@
 // css-minify -f css/app.css
 // https://validator.w3.org/#validate-by-upload
 
-var productListShown = false;
+var app = {
+    productListShown: false,
+    productImageCount: 0,
+    modalSource: null
+};
+
+app.productTemplate = `
+<div class="col">
+    <div class="product">
+        <img src="{{image}}" alt="" class="product-img">
+        <h5 class="name lang-en">{{en.title}}</h5>
+        <h5 class="name lang-fr">{{fr.title}}</h5>
+        <p class="para-line lang-en">{{en.info}}</p>
+        <p class="para-line lang-fr">{{fr.info}}</p>
+    </div>
+</div>`;
 
 function gotoContact() {
     location.href = '#contact';
@@ -12,27 +27,22 @@ function gotoHome() {
     location.href = 'index.html';
 }
 
-function setElementVisible(element, isVisible) {
-    if (isVisible) {
-        element.css({ "visibility": "visible", "display": "flex" });
-    }
-    else {
-        element.css({ "visibility": "hidden", "display": "none" });
-    }
-}
-
 function toggleProducts() {
-    productListShown = !productListShown;
-    setElementVisible($('#product-list'), productListShown);
+    app.productListShown = !app.productListShown;
+
+    setElementVisible($('#product-list'), app.productListShown);
 
     $(".product-list-arrow").each(function (index, element) {
-        $(element).html(productListShown ? "&nbsp;↑" : "&nbsp;↓");
+        $(element).html(app.productListShown ? "&nbsp;↑" : "&nbsp;↓");
     });
+
+
+    $("#products-first-row").css({ "margin-bottom": app.productListShown ? "3rem" : 0 });
 }
 
 function initProducts() {
     const source = $('#product-template').html();
-    const template = Handlebars.compile(source);
+    const template = Handlebars.compile(app.productTemplate);
 
     let productListLength = products.length;
 
@@ -91,8 +101,6 @@ function initProducts() {
 //     handleBreakPoint();
 // }
 
-let modalSource = null;
-let productImageCount = 0;
 $(document).ready(function () {
     initProducts();
 
@@ -115,18 +123,16 @@ $(document).ready(function () {
     $("#next-image-button").click(evt => {
         evt.stopPropagation();
 
-        let imageIndex = $(modalSource).attr("image-index");
-        imageIndex++;
+        let imageIndex = Number($(app.modalSource).attr("image-index")) + 1;
 
-        if (imageIndex < productImageCount) {
+        if (imageIndex < app.productImageCount) {
             let newImage = document.getElementById("product-image-" + imageIndex);
-
-            modalSource = newImage;
+            app.modalSource = newImage;
             modalImg.src = newImage.src;
         }
         else {
             let newImage = document.getElementById("product-image-0");
-            modalSource = newImage;
+            app.modalSource = newImage;
             modalImg.src = newImage.src;
         }
     });
@@ -134,18 +140,16 @@ $(document).ready(function () {
     $("#previous-image-button").click(evt => {
         evt.stopPropagation();
 
-        let imageIndex = $(modalSource).attr("image-index");
+        let imageIndex = Number($(app.modalSource).attr("image-index"));
 
         if (imageIndex == 0) {
-            let newImage = document.getElementById("product-image-" + (productImageCount - 1));
-            modalSource = newImage;
+            let newImage = document.getElementById("product-image-" + (app.productImageCount - 1));
+            app.modalSource = newImage;
             modalImg.src = newImage.src;
         }
         else {
-            imageIndex--;
-            let newImage = document.getElementById("product-image-" + imageIndex);
-
-            modalSource = newImage;
+            let newImage = document.getElementById("product-image-" + (imageIndex - 1));
+            app.modalSource = newImage;
             modalImg.src = newImage.src;
         }
     });
@@ -157,41 +161,12 @@ $(document).ready(function () {
         $(element).attr("image-index", index);
         $(element).attr("id", "product-image-" + index);
 
-        // console.log(index);
         $(element).click(() => {
-            modalSource = this;
-            // console.log("DAKLDA", this);
-
+            app.modalSource = this;
             modalDialog.css({ display: "block" });
             modalImg.src = this.src;
         });
 
-        productImageCount++;
-        console.log("productImageCount", productImageCount);
-        // $(element).tags();
+        app.productImageCount++;
     });
-
-    // // Get the image and insert it inside the modal - use its "alt" text as a caption
-    // var img = document.getElementById("product-img-01");
-    // var modalImg = document.getElementById("img01");
-    // var captionText = document.getElementById("caption");
-    // img.onclick = function () {
-    //     modal.style.display = "block";
-    //     modalImg.src = this.src;
-    //     captionText.innerHTML = this.alt;
-    // }
-
-    // // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-    // // When the user clicks on <span> (x), close the modal
-    // span.onclick = function () {
-    //     modal.style.display = "none";
-    // }
-
-    // window.getComputedStyle(document.documentElement).getPropertyPriority
-
-    // console.log(window.getComputedStyle(document.documentElement));
-
-    // console.log(window.getComputedStyle(document.documentElement).getPropertyValue("--footer-mailing-address-first-visibility"));
 });

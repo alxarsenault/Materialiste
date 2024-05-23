@@ -11,26 +11,10 @@
   <title>Matérialiste</title>
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-  <script id="product-template" type="text/x-handlebars-template">
-    <div class="col">
-      <div class="product">
-        <img src="{{image}}" alt="" class="product-img">
-        <h5 class="name lang-en">{{en.title}}</h5>
-        <h5 class="name lang-fr">{{fr.title}}</h5>
-        <p class="para-line lang-en">
-          {{en.info}}
-        </p>
-        <p class="para-line lang-fr">
-          {{fr.info}}
-        </p>
-      </div>
-    </div>
-  </script>
-
   <section class="header">
     <div class="container">
       <div class="logo">
@@ -107,7 +91,7 @@
 
   <section class="products">
     <div class="container">
-      <div class="row">
+      <div id="products-first-row" class="row">
         <div class="col">
 
           <!-- Products Title -->
@@ -158,17 +142,17 @@
           </div>
         </div>
       </div>
-      <!-- <div id="product-list" class="row">
-        <div id="product-list-content" class="container">
+      <div id="product-list">
+        <div id="product-list-content">
         </div>
-      </div> -->
+      </div>
     </div>
   </section>
 
-  <div id="product-list" class="products">
+  <!-- <div id="product-list" class="products">
     <div id="product-list-content" class="container">
     </div>
-  </div>
+  </div> -->
 
   <!-- Portfolio section start -->
   <section class="portfolios">
@@ -317,9 +301,9 @@
   <script src="js/handlebars.js"></script>
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="data/products.js"></script>
+  <script src="js/utils.js"></script>
   <script src="js/lang.js"></script>
-
-  <script src="js/app.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

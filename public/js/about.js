@@ -6,15 +6,6 @@ function gotoHome() {
     location.href='index.html';
 }
 
-function setElementVisible(element, isVisible) {
-    if (isVisible) {
-        element.css({ "visibility": "visible", "display": "flex" });
-    }
-    else {
-        element.css({ "visibility": "hidden", "display": "none" });
-    }
-}
-
 $(document).ready(function () {
     initLanguage();
 });
