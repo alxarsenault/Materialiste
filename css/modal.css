@@ -5,13 +5,11 @@
 /* The Modal (background) */
 .modal {
     display: none;
+    /* display: flex; */
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
     z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-
     /* Location of the box */
     left: 0;
     top: 0;
@@ -25,18 +23,37 @@
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.8);
     /* Black w/ opacity */
+
+    /* justify-content: center; */
+    /* text-align: center; */
+
+    padding: 2rem;
+}
+
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+    /* padding: 2rem; */
 }
 
 /* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+/* .modal-content  */
+
+#modal-content {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    animation-name: zoom;
+    -webkit-animation-name: zoom;
+
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
 }
 
 /* Caption of Modal Image */
-#caption {
+/* #caption {
     margin: auto;
     display: block;
     width: 80%;
@@ -45,17 +62,9 @@
     color: #ccc;
     padding: 10px 0;
     height: 150px;
-}
+} */
 
 /* Add Animation */
-.modal-content,
-#caption {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.2s;
-    animation-name: zoom;
-    animation-duration: 0.2s;
-}
-
 @-webkit-keyframes zoom {
     from {
         -webkit-transform: scale(0)
@@ -76,20 +85,64 @@
     }
 }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
+.modal-navigate-button {
+    cursor: pointer;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    position: absolute;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.close:hover,
-.close:focus {
+.modal-navigate-button:hover {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* The Close Button */
+#modal-close {
+    top: 15px;
+    right: 35px;
+}
+
+#previous-image-button {
+    bottom: 15%;
+    left: 30%;
+}
+
+#next-image-button {
+    bottom: 15%;
+    right: 30%;
+}
+
+@media only screen and (min-width: 768px) {
+    #previous-image-button {
+        bottom: 10%;
+        left: 40%;
+    }
+
+    #next-image-button {
+        bottom: 10%;
+        right: 40%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #previous-image-button {
+        top: 50%;
+        left: 10%;
+    }
+
+    #next-image-button {
+        top: 50%;
+        right: 10%;
+    }
 }

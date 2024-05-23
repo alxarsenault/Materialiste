@@ -1,5 +1,6 @@
 @import url("common.css");
 @import url("footer.css");
+@import url("modal.css");
 
 :root {
     /* Hero */
@@ -22,7 +23,6 @@
 
 @media only screen and (min-width: 768px) {
     :root {
-
         /* Hero */
         --company-logo-font-size: 1.5rem;
         --header-container-padding: 6rem;
@@ -77,14 +77,6 @@
 
 .header .container {
     padding: var(--header-container-padding);
-}
-
-.wood-header {
-    height: 30vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(7, 4, 0, 0.2)), url(../img/172265636_169620748405959_5553376907795596059_n.jpg);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
 }
 
 .logo {
@@ -249,15 +241,5 @@ left margin is 100px */
 }
 
 .portfolio-img {
-    width: 100%;
-}
-
-
-/*  */
-.wood-list .container .row {
-    flex-direction: var(--products-col-direction);
-}
-
-.wood-list .wood-img {
     width: 100%;
 }

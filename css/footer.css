@@ -2,8 +2,7 @@
  * Footer
  * ---------------------------------------------------------------------------*/
 
- :root {
-    /* Footer */
+:root {
     --footer-height: 30rem;
     --footer-col-direction: column;
     --footer-heading-font-size: 3.2vw;
@@ -16,7 +15,6 @@
 
 @media only screen and (min-width: 768px) {
     :root {
-        /* Footer */
         --footer-height: 30rem;
         --footer-col-direction: row;
         --footer-heading-font-size: 2.3vw;
@@ -30,7 +28,6 @@
 
 @media only screen and (min-width: 992px) {
     :root {
-        /* Footer */
         --footer-height: 40rem;
         --footer-col-direction: row;
         --footer-heading-font-size: 1.3vw;
