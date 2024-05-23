@@ -1,12 +1,14 @@
-function resetLanguage() {
+var mt = mt || {};
+
+mt.resetLanguage = function () {
     const currentLanguage = localStorage.language;
 
     $(".lang-fr").each(function (index, element) {
-        setElementVisible($(element), currentLanguage == "fr");
+        mt.setElementVisible($(element), currentLanguage == "fr");
     });
 
     $(".lang-en").each(function (index, element) {
-        setElementVisible($(element), currentLanguage == "en");
+        mt.setElementVisible($(element), currentLanguage == "en");
     });
 
     if (currentLanguage == "fr") {
@@ -21,16 +23,16 @@ function resetLanguage() {
     }
 }
 
-function setLanguage(lang) {
+mt.setLanguage = function (lang) {
     if (lang != "en" && lang != "fr") {
         lang = "en";
     }
 
     localStorage.setItem('language', lang);
-    resetLanguage();
+    mt.resetLanguage();
 }
 
-function getNavigatorDefaultLanguage() {
+mt.getNavigatorDefaultLanguage = function () {
     let lang = window.navigator.languages ? window.navigator.languages[0] : null;
     lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
 
@@ -50,11 +52,11 @@ function getNavigatorDefaultLanguage() {
     return shortLang;
 }
 
-function initLanguage() {
+mt.initLanguage = function () {
     if (localStorage.language) {
-        setLanguage(localStorage.language);
+        mt.setLanguage(localStorage.language);
     }
     else {
-        setLanguage(getNavigatorDefaultLanguage());
+        mt.setLanguage(mt.getNavigatorDefaultLanguage());
     }
 }

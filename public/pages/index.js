@@ -19,29 +19,20 @@ app.productTemplate = `
     </div>
 </div>`;
 
-function gotoContact() {
-    location.href = '#contact';
-}
-
-function gotoHome() {
-    location.href = 'index.html';
-}
-
-function toggleProducts() {
+app.toggleProducts = function () {
     app.productListShown = !app.productListShown;
 
-    setElementVisible($('#product-list'), app.productListShown);
+    mt.setElementVisible($('#product-list'), app.productListShown);
 
     $(".product-list-arrow").each(function (index, element) {
         $(element).html(app.productListShown ? "&nbsp;↑" : "&nbsp;↓");
     });
 
-
     $("#products-first-row").css({ "margin-bottom": app.productListShown ? "3rem" : 0 });
 }
 
-function initProducts() {
-    const source = $('#product-template').html();
+app.initProducts = function () {
+    // const source = $('#product-template').html();
     const template = Handlebars.compile(app.productTemplate);
 
     let productListLength = products.length;
@@ -68,45 +59,10 @@ function initProducts() {
     }
 
     // Hide product list.
-    setElementVisible($('#product-list'), false);
+    mt.setElementVisible($('#product-list'), false);
 }
 
-
-// const mobileQuery = window.matchMedia("(max-width: 768px)");
-// const tabletQuery = window.matchMedia("(max-width: 992px)");
-// const desktopQuery = window.matchMedia("(min-width: 992px)");
-
-// function handleBreakPoint() {
-//     if (mobileQuery.matches) {
-//         console.log("mobileQuery");
-//         $('#footer-mailing-address-first').css({ "visibility": "visible", "display": "flexbox" });
-//         setElementVisible($('#footer-mailing-address-last'), false);
-//     }
-//     else if (tabletQuery.matches) {
-//         console.log("tabletQuery");
-//         setElementVisible($('#footer-mailing-address-first'), false);
-//         $('#footer-mailing-address-last').css({ "visibility": "visible", "display": "flex" });
-//     }
-//     else if (desktopQuery.matches) {
-//         console.log("desktopQuery");
-//         $('#footer-mailing-address-first').css({ "visibility": "visible", "display": "flexbox" });
-//         setElementVisible($('#footer-mailing-address-last'), false);
-//     }
-// }
-
-// function initWindowBreakPoints() {
-//     mobileQuery.addListener(handleBreakPoint);
-//     tabletQuery.addListener(handleBreakPoint);
-//     desktopQuery.addListener(handleBreakPoint);
-//     handleBreakPoint();
-// }
-
-$(document).ready(function () {
-    initProducts();
-
-    initLanguage();
-
-    // initWindowBreakPoints();
+app.initModal = function () {
 
     // Get the modal
     let modalDialog = $("#modal-dialog");
@@ -169,4 +125,14 @@ $(document).ready(function () {
 
         app.productImageCount++;
     });
+}
+
+$(document).ready(function () {
+    mt.initFooter();
+
+    app.initProducts();
+
+    mt.initLanguage();
+
+    app.initModal();
 });

@@ -2,6 +2,46 @@
  * Footer
  * ---------------------------------------------------------------------------*/
 
+ :root {
+    /* Footer */
+    --footer-height: 30rem;
+    --footer-col-direction: column;
+    --footer-heading-font-size: 3.2vw;
+    --footer-font-size: 2.5vw;
+    --footer-mailing-address-first-visibility: visible;
+    --footer-mailing-address-first-display: flexbox;
+    --footer-mailing-address-last-visibility: hidden;
+    --footer-mailing-address-last-display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        /* Footer */
+        --footer-height: 30rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 2.3vw;
+        --footer-font-size: 2.5vw;
+        --footer-mailing-address-first-visibility: hidden;
+        --footer-mailing-address-first-display: none;
+        --footer-mailing-address-last-visibility: visible;
+        --footer-mailing-address-last-display: flex;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    :root {
+        /* Footer */
+        --footer-height: 40rem;
+        --footer-col-direction: row;
+        --footer-heading-font-size: 1.3vw;
+        --footer-font-size: 1.5vw;
+        --footer-mailing-address-first-visibility: visible;
+        --footer-mailing-address-first-display: flexbox;
+        --footer-mailing-address-last-visibility: hidden;
+        --footer-mailing-address-last-display: none;
+    }
+}
+
 .footer {
     height: var(--footer-height);
     background-position: center center;
